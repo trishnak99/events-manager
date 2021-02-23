@@ -15,7 +15,7 @@ function Login() {
     const referer = props.location.state.referer || '/';
   
     function postLogin() {
-      axios.post("https://www.somePlace.com/auth/login", {
+      axios.post("https://localhost/api/login", {
         userName,
         password
       }).then(result => {
