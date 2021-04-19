@@ -1,13 +1,13 @@
 
 import React from "react";
-import { Button } from "../components/AuthForms";
+import { Button } from "../components/AuthForm";
 import { useAuth } from "../context/auth";
 
 function Admin(props) {
   const { setAuthTokens } = useAuth();
 
   function logOut() {
-    setAuthTokens();
+    setAuthTokens(null);
   }
 
   return (

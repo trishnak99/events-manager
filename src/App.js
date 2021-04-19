@@ -2,8 +2,10 @@ import React, {useState} from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import PrivateRoute from './PrivateRoute';
 import Home from "./pages/Home";
-import Admin from "./pages/Admin";
+import Dashboard from "./pages/Dashboard";
 import { AuthContext } from "./context/auth";
+import Login from "../src/pages/Login";
+import Signup from "../src/pages/Signup";
 
 function App(props) {
   const existingTokens = JSON.parse(localStorage.getItem("tokens"));
@@ -18,18 +20,21 @@ function App(props) {
     <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
       <Router>
         <div>
-          <ul>
+          {/* <ul>
             <li>
               <Link to="/">Home Page</Link>
             </li>
             <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li>
               <Link to="/admin">Admin Page</Link>
             </li>
-          </ul>
-          <Route exact path="/" component={Home} />
+          </ul> */}
+          {/* <Route exact path="/" component={Home} /> */}
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <PrivateRoute path="/admin" component={Admin} />
+          <PrivateRoute exact path="/" component={Dashboard} />
         </div>
       </Router>
     </AuthContext.Provider>
@@ -90,4 +95,4 @@ export default App;
 //   );
 // }
 
-export default App;
+// export default App;

@@ -35,13 +35,13 @@ const Button = styled.button`
   font-size: 0.8rem;
 `;
 
-const Logo = styled.img`
-  width: 50%;
-  margin-bottom: 1rem;
-`;
+// const Logo = styled.img`
+//   width: 50%;
+//   margin-bottom: 1rem;
+// `;
 
 const Error = styled.div`
   background-color: red;
 `;
 
-export { Form, Input, Button, Logo, Card, Error };
+export { Form, Input, Button, Card, Error };
